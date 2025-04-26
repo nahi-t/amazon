@@ -1,0 +1,1 @@
+export const prourl="https://fakestoreapi.com"

@@ -2,6 +2,7 @@ import React from 'react'
 import { FaSearch } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
 import { GiDeliveryDrone } from "react-icons/gi";
+import {Link} from 'react-router-dom'
 import Lowerheader from './Lowerheader';
 import classes from "./header.module.css"
 
@@ -12,9 +13,9 @@ export default function Header() {
         <section className={classes.header_contener}>
 <div className={classes.logo_contener} >
    {/* logo */}
-   <a href="/">
+   <Link to="/">
     <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" />
-   </a>
+   </Link>
    {/* delivery */}
    <span>
    <GiDeliveryDrone />
@@ -47,23 +48,23 @@ export default function Header() {
         
 
     </div>
-    <a href="">
+    <Link to="/Auth">
         <div >
             <p>sign in</p>
             <span>Account and list</span>
         </div>
-    </a>
-    <a href="">
+    </Link >
+    <Link to="/Order">
       
             <p>return</p>
             <span>& Order</span>
        
-    </a>
-    <a to={"/chart"} className={classes.cart}>
+    </Link>
+    <Link to="/Cart" className={classes.cart}>
 
     <CiShoppingCart size={35} />
     <span>0</span>
-    </a>
+    </Link>
 </div>
         </section>
      </section>
