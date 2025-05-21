@@ -7,7 +7,7 @@ import Payment from '../amazon/src/pages/Payment/Payment';
 import Oredar from '../amazon/src/pages/Order/Oredar';
 import Cart from '../amazon/src/pages/Cart/Carts';
 import Result from '../amazon/src/pages/Result/Result'
-
+import ProDetail from './src/pages/ProdactDetail/ProDetail'  ;
 export default function Routering() {
   return (
     <div>
@@ -17,6 +17,7 @@ export default function Routering() {
           <Route path='/Auth' element={<Signup />} />
           <Route path='/Payment' element={<Payment />} />
           <Route path="/category/:catagoryname" element={<Result/>}/>
+          <Route path="/products/:productsId" element={<ProDetail/>}/>
           <Route path='/Order' element={<Oredar />} />
           <Route path='/Cart' element={<Cart />} />
         </Routes>

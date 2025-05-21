@@ -65,3 +65,42 @@
         scroll-snap-align: start; /* optional: snap effect */
     }
 }
+.pro_flx{
+    box-shadow: none;
+    height: auto;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+.pro_flx h3{
+    padding: 20px 0px;
+}
+.pro_flx .button{
+    display: inline-block;
+    position: static;
+    width: 100px;
+    margin-right: 40px; 
+
+} 
+.pro_flx{
+    height: 50vh;
+}
+.pro_flx img{
+   width: 200px !important; 
+   height: auto;
+
+ column-gap: 20px;
+}
+@media screen and (max-width:768px){
+    .pro_flx{
+        display: inline-block;
+        flex-direction: column;
+      column-gap: 20px;
+    }
+    .pro_flx img{
+        width: 150px !important; 
+        height: auto;
+       column-gap: 20px;
+     }
+    
+}

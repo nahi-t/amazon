@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaSearch } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
 import { GiDeliveryDrone } from "react-icons/gi";
 import {Link} from 'react-router-dom'
 import Lowerheader from './Lowerheader';
 import classes from "./header.module.css"
+import { datacontext } from '../Dataprovider/Dataprovider';
 
 export default function Header() {
+const[{basket},dispatch]=useContext(datacontext)
+const totalitem=basket?.reduce((amount,item)=>{
+  return item.amount+amount
+},0)
+
   return (
     <>
-     <section>
-        <section className={classes.header_contener}>
+
+     <section className={classes.fixed_contener}>
+     
+     <section className={classes.header_contener}>
 <div className={classes.logo_contener} >
    {/* logo */}
    <Link to="/">
@@ -63,12 +71,13 @@ export default function Header() {
     <Link to="/Cart" className={classes.cart}>
 
     <CiShoppingCart size={35} />
-    <span>0</span>
+    <span>{totalitem}</span>
     </Link>
 </div>
         </section>
-     </section>
+    
      <Lowerheader/>
+     </section>
     </>
   )
 }
